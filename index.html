@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<!-- Source checked 2026-06-17: How Combat Works.md sha256:777b000ee927; Skill Checks.md sha256:f10d526cecbe. Original dashboard layout and all non-combat/non-skill sections preserved. -->
+<!-- Source checked 2026-06-27: Conditions updated from PF1e Conditions.md. Prior sources: How Combat Works.md sha256:777b000ee927; Skill Checks.md sha256:f10d526cecbe. -->
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -643,37 +643,50 @@ a:hover, a:focus-visible { color: #a5f3fc; text-decoration: underline; text-unde
 </div>
 </div>
 </div>
-</div><div class="accordion" data-category="conditions blinded broken confused dazzled dazed entangled exhausted fatigued frightened grappled helpless incorporeal invisible nauseated panicked paralyzed pinned prone shaken sickened staggered stunned">
+</div><div class="accordion" data-category="conditions bleed blinded broken confused cowering dazed dazzled dead deafened disabled dying energy drained entangled exhausted fascinated fatigued flat footed frightened grappled helpless incorporeal invisible nauseated panicked paralyzed petrified pinned prone shaken sickened sinking stable staggered stunned unconscious">
 <div class="acc-header" onclick="toggleAccordion(this)">
 <div class="acc-icon" style="background:rgba(208,74,74,0.15);color:var(--accent-red)"><svg><use href="#icon-alert"></use></svg></div>
 <div class="acc-title">Conditions</div>
-<div class="acc-badge" style="background:rgba(208,74,74,0.15);color:var(--accent-red)">22</div>
+<div class="acc-badge" style="background:rgba(208,74,74,0.15);color:var(--accent-red)">35</div>
 <div class="acc-chevron">▾</div>
 </div>
 <div class="acc-body">
 <div class="condition-grid">
-<div class="condition-item"><div class="condition-name">Bleed</div><div class="condition-desc">Take listed damage at start of turn. Removed via DC 15 Heal check or healing spell.</div></div>
-<div class="condition-item"><div class="condition-name">Blinded</div><div class="condition-desc">-2 AC, lose Dex to AC, -4 Str/Dex skills. Foes have total concealment vs you.</div></div>
-<div class="condition-item"><div class="condition-name">Broken</div><div class="condition-desc">Weapons -2 atk/dmg, crits on natural 20 only. Armor/shields give half AC.</div></div>
-<div class="condition-item"><div class="condition-name">Confused</div><div class="condition-desc">Roll d100 each round: 01-25 act normally, 26-50 babble 1 round, 51-75 deal 1d8+Str to self, 76-100 attack nearest creature.</div></div>
-<div class="condition-item"><div class="condition-name">Dazed</div><div class="condition-desc">No actions. Does not lose Dex to AC.</div></div>
-<div class="condition-item"><div class="condition-name">Entangled</div><div class="condition-desc">No movement if anchored, else half speed. -2 atk, -4 Dex. Concentration checks to cast.</div></div>
-<div class="condition-item"><div class="condition-name">Exhausted</div><div class="condition-desc">Half speed. -6 Str and Dex. Rest 1 hour → Fatigued.</div></div>
-<div class="condition-item"><div class="condition-name">Fatigued</div><div class="condition-desc">Cannot run or charge. -2 Str and Dex. Rest 8 hrs to recover.</div></div>
-<div class="condition-item"><div class="condition-name">Frightened</div><div class="condition-desc">As Shaken + must flee if possible.</div></div>
-<div class="condition-item"><div class="condition-name">Grappled</div><div class="condition-desc">Cannot move or use two-handed actions. -4 Dex, -2 atk/CMB (except escape). No AoOs.</div></div>
-<div class="condition-item"><div class="condition-name">Helpless</div><div class="condition-desc">Paralyzed, held, bound, sleeping, or at mercy of others. Dex = 0. Coup de grace possible.</div></div>
-<div class="condition-item"><div class="condition-name">Incorporeal</div><div class="condition-desc">No physical body. Immune to nonmagical attacks. Half damage from magic (full from force/incorporeal).</div></div>
-<div class="condition-item"><div class="condition-name">Invisible</div><div class="condition-desc">+2 atk, +20 Stealth. Defenders lose Dex bonus to AC against you.</div></div>
-<div class="condition-item"><div class="condition-name">Nauseated</div><div class="condition-desc">Can only move. No attacks, spellcasts, or concentration.</div></div>
-<div class="condition-item"><div class="condition-name">Panicked</div><div class="condition-desc">As Frightened. Drop held items, run from all dangers.</div></div>
-<div class="condition-item"><div class="condition-name">Paralyzed</div><div class="condition-desc">Str and Dex = 0. Winged fliers fall. Helpless.</div></div>
-<div class="condition-item"><div class="condition-name">Pinned</div><div class="condition-desc">As Grappled + Flat-Footed, -4 AC, only verbal/mental actions (except escape).</div></div>
-<div class="condition-item"><div class="condition-name">Prone</div><div class="condition-desc">-4 melee atk. No ranged weapons except crossbows. +4 AC vs ranged, -4 AC vs melee.</div></div>
-<div class="condition-item"><div class="condition-name">Shaken</div><div class="condition-desc">-2 atk, weapon damage, saves, skill checks, ability checks.</div></div>
-<div class="condition-item"><div class="condition-name">Sickened</div><div class="condition-desc">-2 atk, weapon damage, saves, skill checks, ability checks.</div></div>
-<div class="condition-item"><div class="condition-name">Staggered</div><div class="condition-desc">Only 1 Move or Standard action per turn (plus Free, Swift, Immediate).</div></div>
-<div class="condition-item"><div class="condition-name">Stunned</div><div class="condition-desc">Cannot act. Drops everything. -2 AC. Lose Dex bonus to AC.</div></div>
+<div class="condition-item"><div class="condition-name">Bleed</div><div class="condition-desc">Take listed damage at the beginning of your turn. DC 15 Heal or any spell that cures hit point damage stops it. Different kinds of bleed stack; same kind does not—use the worse effect.</div></div>
+<div class="condition-item"><div class="condition-name">Blinded</div><div class="condition-desc">Cannot see: -2 AC, lose Dex bonus to AC, -4 on most Str/Dex skill checks and opposed Perception. Vision-based checks fail; foes have total concealment. DC 10 Acrobatics to move faster than half speed or fall prone.</div></div>
+<div class="condition-item"><div class="condition-name">Broken</div><div class="condition-desc">Damaged item over half HP lost. Weapon: -2 attack/damage, crits only natural 20 and ×2. Armor/shield: AC bonus halved, ACP doubled. Tool: -2 skill checks. Wand/staff: uses double charges.</div></div>
+<div class="condition-item"><div class="condition-name">Confused</div><div class="condition-desc">Cannot distinguish ally/foe; treat all as enemies. Roll each turn: 01–25 act normally, 26–50 babble, 51–75 deal 1d8+Str to self, 76–100 attack nearest creature. If attacked, attacks last attacker next turn if able.</div></div>
+<div class="condition-item"><div class="condition-name">Cowering</div><div class="condition-desc">Frozen in fear: no actions, -2 AC, and lose Dex bonus to AC.</div></div>
+<div class="condition-item"><div class="condition-name">Dazed</div><div class="condition-desc">Can take no actions, but takes no AC penalty. Typically lasts 1 round.</div></div>
+<div class="condition-item"><div class="condition-name">Dazzled</div><div class="condition-desc">-1 penalty on attack rolls and sight-based Perception checks.</div></div>
+<div class="condition-item"><div class="condition-name">Dead</div><div class="condition-desc">Dead at negative HP equal to Constitution, Constitution 0, or killed outright. Soul leaves body; normal/magical healing no longer works, but resurrection magic can restore life.</div></div>
+<div class="condition-item"><div class="condition-name">Deafened</div><div class="condition-desc">Cannot hear: -4 initiative, automatically fail sound-based Perception, -4 opposed Perception, and 20% spell failure for spells with verbal components.</div></div>
+<div class="condition-item"><div class="condition-name">Disabled</div><div class="condition-desc">At 0 HP, or stable/conscious with negative HP: one move or standard action per round, not both; no full-round actions. Moves at half speed. Strenuous standard actions deal 1 damage after completion unless they heal you.</div></div>
+<div class="condition-item"><div class="condition-name">Dying</div><div class="condition-desc">Unconscious at negative HP and not stable. Each turn make DC 10 Constitution check, penalized by negative HP, to stabilize; natural 20 succeeds. Failure loses 1 HP. Dies at negative HP equal to Constitution.</div></div>
+<div class="condition-item"><div class="condition-name">Energy Drained</div><div class="condition-desc">Has one or more negative levels, which may become permanent. If negative levels equal or exceed Hit Dice, the creature dies.</div></div>
+<div class="condition-item"><div class="condition-name">Entangled</div><div class="condition-desc">Moves at half speed, cannot run or charge, -2 attack rolls, -4 Dex. If anchored/tethered, movement may be prevented. Casting requires concentration DC 15 + spell level.</div></div>
+<div class="condition-item"><div class="condition-name">Exhausted</div><div class="condition-desc">Half speed, cannot run or charge, -6 Str and Dex. After 1 hour complete rest becomes fatigued. Further fatigue effects can exhaust a fatigued character.</div></div>
+<div class="condition-item"><div class="condition-name">Fascinated</div><div class="condition-desc">Entranced: stands or sits quietly and takes no actions except paying attention. -4 reactive skill checks such as Perception. Potential threats allow a new save; obvious threats break it. Ally can shake free as a standard action.</div></div>
+<div class="condition-item"><div class="condition-name">Fatigued</div><div class="condition-desc">Cannot run or charge, -2 Str and Dex. Doing anything that would normally cause fatigue makes you exhausted. 8 hours complete rest removes it.</div></div>
+<div class="condition-item"><div class="condition-name">Flat-Footed</div><div class="condition-desc">Before acting in combat: lose Dex bonus to AC and CMD and cannot make AoOs unless Combat Reflexes or Uncanny Dodge applies. Cannot take immediate actions while flat-footed.</div></div>
+<div class="condition-item"><div class="condition-name">Frightened</div><div class="condition-desc">Flees from fear source as best it can; if unable, may fight. -2 attack rolls, saves, skill checks, and ability checks. Must use special abilities/spells to flee if they are the only escape.</div></div>
+<div class="condition-item"><div class="condition-name">Grappled</div><div class="condition-desc">Cannot move; -4 Dex; -2 attack rolls and CMB except to grapple/escape; no two-handed actions and no AoOs. Casting or spell-like ability requires concentration DC 10 + grappler&apos;s CMB + spell level. Cannot Stealth against grappler.</div></div>
+<div class="condition-item"><div class="condition-name">Helpless</div><div class="condition-desc">Paralyzed, held, bound, sleeping, unconscious, or at mercy of others. Dex treated as 0. Melee attacks get +4; ranged attacks no special bonus. Vulnerable to sneak attack and coup de grace.</div></div>
+<div class="condition-item"><div class="condition-name">Incorporeal</div><div class="condition-desc">No physical body. Immune to nonmagical attack forms. Takes half damage from magic weapons, spells, spell-like effects, and supernatural effects; full damage from force effects and other incorporeal creatures/effects.</div></div>
+<div class="condition-item"><div class="condition-name">Invisible</div><div class="condition-desc">Visually undetectable. +2 attack rolls against sighted opponents and ignores opponents&apos; Dex bonus to AC, if any.</div></div>
+<div class="condition-item"><div class="condition-name">Nauseated</div><div class="condition-desc">Unable to attack, cast spells, concentrate, or do anything requiring attention. Only action allowed is a single move action per turn.</div></div>
+<div class="condition-item"><div class="condition-name">Panicked</div><div class="condition-desc">Drops held items and flees at top speed from fear source and other dangers along a random path; cannot take other actions. -2 saves, skill checks, and ability checks. If cornered, cowers and does not attack.</div></div>
+<div class="condition-item"><div class="condition-name">Paralyzed</div><div class="condition-desc">Frozen and unable to move or act; effective Str and Dex 0 and helpless, but can take purely mental actions. Winged fliers fall; swimmers may drown. Moving through its space costs 2 squares.</div></div>
+<div class="condition-item"><div class="condition-name">Petrified</div><div class="condition-desc">Turned to stone and considered unconscious. If broken pieces are joined before returning to flesh, unharmed; if incomplete, returns incomplete with permanent HP loss and/or debilitation.</div></div>
+<div class="condition-item"><div class="condition-name">Pinned</div><div class="condition-desc">Cannot move; denied Dex bonus; additional -4 AC. Limited actions; may try to free itself. Verbal/mental actions allowed, but no spells requiring somatic or material components. Casting/SLA concentration DC 10 + grappler&apos;s CMB + spell level. Does not stack with grappled.</div></div>
+<div class="condition-item"><div class="condition-name">Prone</div><div class="condition-desc">Lying on ground. Attacker: -4 melee attacks and cannot use ranged weapons except crossbows. Defender: +4 AC vs ranged, -4 AC vs melee. Standing is a move action that provokes.</div></div>
+<div class="condition-item"><div class="condition-name">Shaken</div><div class="condition-desc">-2 attack rolls, saving throws, skill checks, and ability checks. Less severe fear than frightened or panicked.</div></div>
+<div class="condition-item"><div class="condition-name">Sickened</div><div class="condition-desc">-2 attack rolls, weapon damage rolls, saving throws, skill checks, and ability checks.</div></div>
+<div class="condition-item"><div class="condition-name">Sinking</div><div class="condition-desc">Ship at 0 or fewer HP. Cannot move or attack and sinks completely 10 rounds later. Each additional hit dealing more than 25 damage reduces remaining time by 1 round. Magic can repair if HP raised above 0.</div></div>
+<div class="condition-item"><div class="condition-name">Stable</div><div class="condition-desc">Was dying but stopped losing HP; still unconscious at negative HP. With aid, no further HP loss and DC 10 Con check each hour, penalized by negative HP, to become conscious and disabled. Without aid, failed hourly checks lose 1 HP.</div></div>
+<div class="condition-item"><div class="condition-name">Staggered</div><div class="condition-desc">May take a single move or standard action each round, not both and no full-round actions. Free, swift, and immediate actions still allowed. Occurs when nonlethal damage exactly equals current HP.</div></div>
+<div class="condition-item"><div class="condition-name">Stunned</div><div class="condition-desc">Drops everything held, cannot take actions, -2 AC, and loses Dex bonus to AC. Attackers get +4 on combat maneuvers against a stunned opponent.</div></div>
+<div class="condition-item"><div class="condition-name">Unconscious</div><div class="condition-desc">Knocked out and helpless. Usually from negative HP (but not dead) or nonlethal damage exceeding current HP.</div></div>
 </div>
 </div>
 </div>
@@ -1605,30 +1618,43 @@ a:hover, a:focus-visible { color: #a5f3fc; text-decoration: underline; text-unde
 </div>
 </div>
 <div class="cheat-block">
-<h3>Common Conditions</h3>
+<h3>Conditions</h3>
 <div class="cheat-conditions">
-<p class="cheat-condition"><strong>Bleed:</strong> Take listed damage at start of turn; same damage types stack, different types stack. DC 15 Heal or healing spell removes.</p>
-<p class="cheat-condition"><strong>Blinded:</strong> -2 AC, lose Dex to AC, -4 Str/Dex skill checks and opposed Perception; opponents have total concealment.</p>
-<p class="cheat-condition"><strong>Broken:</strong> Weapons -2 attack/damage, crit only on natural 20; armor/shields give half AC and double armor check penalty.</p>
-<p class="cheat-condition"><strong>Confused:</strong> Roll d100 each round: act normally, babble, damage self, or attack nearest creature.</p>
-<p class="cheat-condition"><strong>Dazed:</strong> Cannot act; does not lose Dex to AC.</p>
-<p class="cheat-condition"><strong>Entangled:</strong> If anchored, cannot move; otherwise half speed. -2 attacks, -4 Dex, concentration checks to cast.</p>
-<p class="cheat-condition"><strong>Exhausted:</strong> Half speed, -6 Str/Dex. Rest 1 hour becomes fatigued.</p>
-<p class="cheat-condition"><strong>Fatigued:</strong> Cannot run or charge; -2 Str/Dex. Rest 8 hours to recover.</p>
-<p class="cheat-condition"><strong>Frightened:</strong> As shaken, and must flee if possible.</p>
-<p class="cheat-condition"><strong>Grappled:</strong> Cannot move; -4 Dex, -2 attacks/CMB except to grapple or escape; cannot make AoOs.</p>
-<p class="cheat-condition"><strong>Helpless:</strong> Dex 0, melee attacks get +4; vulnerable to coup de grace and sneak attack.</p>
-<p class="cheat-condition"><strong>Incorporeal:</strong> Immune to nonmagical attacks; half damage from magic, full from force/incorporeal effects.</p>
-<p class="cheat-condition"><strong>Invisible:</strong> +2 attacks; target loses Dex to AC; +20 Stealth moving or +40 standing still.</p>
-<p class="cheat-condition"><strong>Nauseated:</strong> Can only take move actions; no attacking, casting, or concentrating.</p>
-<p class="cheat-condition"><strong>Panicked:</strong> As frightened, drops held items and flees all danger.</p>
-<p class="cheat-condition"><strong>Paralyzed:</strong> Str/Dex 0, helpless; winged fliers fall.</p>
-<p class="cheat-condition"><strong>Pinned:</strong> As grappled, also flat-footed, -4 AC, limited to verbal/mental actions except escape.</p>
-<p class="cheat-condition"><strong>Prone:</strong> -4 melee attacks; cannot use most ranged weapons; +4 AC vs ranged, -4 AC vs melee.</p>
-<p class="cheat-condition"><strong>Shaken:</strong> -2 attacks, weapon damage, saves, skills, and ability checks.</p>
-<p class="cheat-condition"><strong>Sickened:</strong> -2 attacks, weapon damage, saves, skills, and ability checks.</p>
-<p class="cheat-condition"><strong>Staggered:</strong> One move or standard action per turn, plus free/swift/immediate actions.</p>
-<p class="cheat-condition"><strong>Stunned:</strong> Cannot act, drops held items, -2 AC, loses Dex to AC.</p>
+<p class="cheat-condition"><strong>Bleed:</strong> Take listed damage at the beginning of your turn. DC 15 Heal or any spell that cures hit point damage stops it. Different kinds of bleed stack; same kind does not—use the worse effect.</p>
+<p class="cheat-condition"><strong>Blinded:</strong> Cannot see: -2 AC, lose Dex bonus to AC, -4 on most Str/Dex skill checks and opposed Perception. Vision-based checks fail; foes have total concealment. DC 10 Acrobatics to move faster than half speed or fall prone.</p>
+<p class="cheat-condition"><strong>Broken:</strong> Damaged item over half HP lost. Weapon: -2 attack/damage, crits only natural 20 and ×2. Armor/shield: AC bonus halved, ACP doubled. Tool: -2 skill checks. Wand/staff: uses double charges.</p>
+<p class="cheat-condition"><strong>Confused:</strong> Cannot distinguish ally/foe; treat all as enemies. Roll each turn: 01–25 act normally, 26–50 babble, 51–75 deal 1d8+Str to self, 76–100 attack nearest creature. If attacked, attacks last attacker next turn if able.</p>
+<p class="cheat-condition"><strong>Cowering:</strong> Frozen in fear: no actions, -2 AC, and lose Dex bonus to AC.</p>
+<p class="cheat-condition"><strong>Dazed:</strong> Can take no actions, but takes no AC penalty. Typically lasts 1 round.</p>
+<p class="cheat-condition"><strong>Dazzled:</strong> -1 penalty on attack rolls and sight-based Perception checks.</p>
+<p class="cheat-condition"><strong>Dead:</strong> Dead at negative HP equal to Constitution, Constitution 0, or killed outright. Soul leaves body; normal/magical healing no longer works, but resurrection magic can restore life.</p>
+<p class="cheat-condition"><strong>Deafened:</strong> Cannot hear: -4 initiative, automatically fail sound-based Perception, -4 opposed Perception, and 20% spell failure for spells with verbal components.</p>
+<p class="cheat-condition"><strong>Disabled:</strong> At 0 HP, or stable/conscious with negative HP: one move or standard action per round, not both; no full-round actions. Moves at half speed. Strenuous standard actions deal 1 damage after completion unless they heal you.</p>
+<p class="cheat-condition"><strong>Dying:</strong> Unconscious at negative HP and not stable. Each turn make DC 10 Constitution check, penalized by negative HP, to stabilize; natural 20 succeeds. Failure loses 1 HP. Dies at negative HP equal to Constitution.</p>
+<p class="cheat-condition"><strong>Energy Drained:</strong> Has one or more negative levels, which may become permanent. If negative levels equal or exceed Hit Dice, the creature dies.</p>
+<p class="cheat-condition"><strong>Entangled:</strong> Moves at half speed, cannot run or charge, -2 attack rolls, -4 Dex. If anchored/tethered, movement may be prevented. Casting requires concentration DC 15 + spell level.</p>
+<p class="cheat-condition"><strong>Exhausted:</strong> Half speed, cannot run or charge, -6 Str and Dex. After 1 hour complete rest becomes fatigued. Further fatigue effects can exhaust a fatigued character.</p>
+<p class="cheat-condition"><strong>Fascinated:</strong> Entranced: stands or sits quietly and takes no actions except paying attention. -4 reactive skill checks such as Perception. Potential threats allow a new save; obvious threats break it. Ally can shake free as a standard action.</p>
+<p class="cheat-condition"><strong>Fatigued:</strong> Cannot run or charge, -2 Str and Dex. Doing anything that would normally cause fatigue makes you exhausted. 8 hours complete rest removes it.</p>
+<p class="cheat-condition"><strong>Flat-Footed:</strong> Before acting in combat: lose Dex bonus to AC and CMD and cannot make AoOs unless Combat Reflexes or Uncanny Dodge applies. Cannot take immediate actions while flat-footed.</p>
+<p class="cheat-condition"><strong>Frightened:</strong> Flees from fear source as best it can; if unable, may fight. -2 attack rolls, saves, skill checks, and ability checks. Must use special abilities/spells to flee if they are the only escape.</p>
+<p class="cheat-condition"><strong>Grappled:</strong> Cannot move; -4 Dex; -2 attack rolls and CMB except to grapple/escape; no two-handed actions and no AoOs. Casting or spell-like ability requires concentration DC 10 + grappler&apos;s CMB + spell level. Cannot Stealth against grappler.</p>
+<p class="cheat-condition"><strong>Helpless:</strong> Paralyzed, held, bound, sleeping, unconscious, or at mercy of others. Dex treated as 0. Melee attacks get +4; ranged attacks no special bonus. Vulnerable to sneak attack and coup de grace.</p>
+<p class="cheat-condition"><strong>Incorporeal:</strong> No physical body. Immune to nonmagical attack forms. Takes half damage from magic weapons, spells, spell-like effects, and supernatural effects; full damage from force effects and other incorporeal creatures/effects.</p>
+<p class="cheat-condition"><strong>Invisible:</strong> Visually undetectable. +2 attack rolls against sighted opponents and ignores opponents&apos; Dex bonus to AC, if any.</p>
+<p class="cheat-condition"><strong>Nauseated:</strong> Unable to attack, cast spells, concentrate, or do anything requiring attention. Only action allowed is a single move action per turn.</p>
+<p class="cheat-condition"><strong>Panicked:</strong> Drops held items and flees at top speed from fear source and other dangers along a random path; cannot take other actions. -2 saves, skill checks, and ability checks. If cornered, cowers and does not attack.</p>
+<p class="cheat-condition"><strong>Paralyzed:</strong> Frozen and unable to move or act; effective Str and Dex 0 and helpless, but can take purely mental actions. Winged fliers fall; swimmers may drown. Moving through its space costs 2 squares.</p>
+<p class="cheat-condition"><strong>Petrified:</strong> Turned to stone and considered unconscious. If broken pieces are joined before returning to flesh, unharmed; if incomplete, returns incomplete with permanent HP loss and/or debilitation.</p>
+<p class="cheat-condition"><strong>Pinned:</strong> Cannot move; denied Dex bonus; additional -4 AC. Limited actions; may try to free itself. Verbal/mental actions allowed, but no spells requiring somatic or material components. Casting/SLA concentration DC 10 + grappler&apos;s CMB + spell level. Does not stack with grappled.</p>
+<p class="cheat-condition"><strong>Prone:</strong> Lying on ground. Attacker: -4 melee attacks and cannot use ranged weapons except crossbows. Defender: +4 AC vs ranged, -4 AC vs melee. Standing is a move action that provokes.</p>
+<p class="cheat-condition"><strong>Shaken:</strong> -2 attack rolls, saving throws, skill checks, and ability checks. Less severe fear than frightened or panicked.</p>
+<p class="cheat-condition"><strong>Sickened:</strong> -2 attack rolls, weapon damage rolls, saving throws, skill checks, and ability checks.</p>
+<p class="cheat-condition"><strong>Sinking:</strong> Ship at 0 or fewer HP. Cannot move or attack and sinks completely 10 rounds later. Each additional hit dealing more than 25 damage reduces remaining time by 1 round. Magic can repair if HP raised above 0.</p>
+<p class="cheat-condition"><strong>Stable:</strong> Was dying but stopped losing HP; still unconscious at negative HP. With aid, no further HP loss and DC 10 Con check each hour, penalized by negative HP, to become conscious and disabled. Without aid, failed hourly checks lose 1 HP.</p>
+<p class="cheat-condition"><strong>Staggered:</strong> May take a single move or standard action each round, not both and no full-round actions. Free, swift, and immediate actions still allowed. Occurs when nonlethal damage exactly equals current HP.</p>
+<p class="cheat-condition"><strong>Stunned:</strong> Drops everything held, cannot take actions, -2 AC, and loses Dex bonus to AC. Attackers get +4 on combat maneuvers against a stunned opponent.</p>
+<p class="cheat-condition"><strong>Unconscious:</strong> Knocked out and helpless. Usually from negative HP (but not dead) or nonlethal damage exceeding current HP.</p>
 </div>
 </div>
 </section>
